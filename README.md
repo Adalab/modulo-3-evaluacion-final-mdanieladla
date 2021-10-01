@@ -1,4 +1,4 @@
-# Ejercicio final módulo 2.
+# Ejercicio final módulo 3.
 
 <h1 align="center">Hola 👋, soy María Daniela Darnea</h1>
 <h3 align="center">Una desarrolladora web en proceso</h3>
