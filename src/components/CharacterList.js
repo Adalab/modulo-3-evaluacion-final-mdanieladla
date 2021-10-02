@@ -1,16 +1,12 @@
 import CharacterCard from './CharacterCard';
 
 const CharacterList = (props) => {
-  const renderCharacters = () => {
-    return props.data.map((dataCharacter) => {
-      return (
-        <li className='container__info' key={dataCharacter.id}>
-          <CharacterCard characterData={dataCharacter} />
-        </li>
-      );
-    });
-  };
-  return <ul className='container'>{renderCharacters()}</ul>;
+  const htmlList = props.data.map((characterData, i) => (
+    <li className='container__info' key={characterData.id}>
+      <CharacterCard characterData={characterData} />
+    </li>
+  ));
+  return <ul className='container'>{htmlList}</ul>;
 };
 
 export default CharacterList;
