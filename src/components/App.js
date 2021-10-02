@@ -9,6 +9,7 @@ import '../styles/layout/list.scss';
 import callToApi from '../services/api';
 import FilterCharacterByName from './Filters';
 import CharacterList from './CharacterList';
+//import CharacterDetail from './CharacterDetail';
 
 const App = () => {
   //Variable estado para el array con los datos que devuelve el api.
@@ -20,6 +21,7 @@ const App = () => {
   useEffect(() => {
     callToApi(data).then((response) => {
       setData(response);
+      console.log(response);
     });
   }, []);
 
@@ -55,7 +57,8 @@ const App = () => {
         search={search}
         handleChangeSearch={handleChangeSearch}
       />
-      <CharacterList renderCharacters={data} />
+      <CharacterList data={filteredData} />
+      {/* <CharacterDetail /> */}
     </>
   );
 };
