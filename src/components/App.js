@@ -1,5 +1,5 @@
 //import Proptypes from 'prop-types';
-//import { Route } from 'react-router-dom';
+import { Route, Link, Switch } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import Header from './Header';
 import '../styles/App.scss';
@@ -9,6 +9,7 @@ import '../styles/layout/list.scss';
 import callToApi from '../services/api';
 import FilterCharacterByName from './Filters';
 import CharacterList from './CharacterList';
+//import { Switch } from 'react-router-dom/cjs/react-router-dom.min';
 //import CharacterDetail from './CharacterDetail';
 
 const App = () => {
@@ -31,19 +32,6 @@ const App = () => {
       .toLocaleLowerCase()
       .includes(search.toLocaleLowerCase());
   });
-  // .map((character) => {
-  //   return (
-  //     <li key={character.id} className='container__info'>
-  //       <img
-  //         src={character.image}
-  //         alt='img'
-  //         className='container__info--img'
-  //       />
-  //       <h3 className='container__info--name'>{character.name}</h3>
-  //       <h4 className='container__info--specie'>{character.species}</h4>
-  //     </li>
-  //   );
-  // });
 
   //Función que sincronica el value del input donde la usuaria teclea su búsqueda y la variable de estado search.
   const handleChangeSearch = (ev) => {
@@ -52,13 +40,18 @@ const App = () => {
 
   return (
     <>
-      <Header />
-      <FilterCharacterByName
-        search={search}
-        handleChangeSearch={handleChangeSearch}
-      />
-      <CharacterList data={filteredData} />
-      {/* <CharacterDetail /> */}
+      <Switch>
+        <Route path='/'>
+          <Header />
+          <FilterCharacterByName
+            search={search}
+            handleChangeSearch={handleChangeSearch}
+          />
+          <CharacterList data={filteredData} />
+        </Route>
+        <Route path='/CharacterDetail/:id'>{/* <CharacterDetail /> */}</Route>
+        <Route>La página que buscas no existe, sorry.</Route>
+      </Switch>
     </>
   );
 };
