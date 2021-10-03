@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 
 const CharacterDetail = (props) => {
-  console.log('CharacterDetail props=', props);
+  console.log('CharacterDetail props=');
   return (
     <>
       <Link to='/'>
