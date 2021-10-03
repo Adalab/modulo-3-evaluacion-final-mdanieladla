@@ -4,7 +4,6 @@ import { useState, useEffect } from 'react';
 import Header from './Header';
 import '../styles/App.scss';
 import '../styles/layout/list.scss';
-//import photo from '../images/wallpaper.png';
 
 import callToApi from '../services/api';
 import FilterCharacterByName from './Filters';
@@ -29,14 +28,15 @@ const App = () => {
   console.log('data= ', data);
 
   const routeData = useRouteMatch('/character/:id');
+  console.log('routeData=', routeData);
   const characterId = routeData !== null ? routeData.params.id : '';
-
+  console.log('character=', characterId);
   const selectedCharacter = data.find(
     (character) => character.id === parseInt(characterId)
   );
   console.log('selectedC=', selectedCharacter);
 
-  //con el filter filtamos por nombre para se pueda buscar por el nomrbe de cada personaje. Con el map pintamos cada personaje en el HTML.
+  //con el filter filtamos por nombre para se pueda buscar por el nombre de cada personaje. Con el map pintamos cada personaje en el HTML.
   const filteredData = data.filter((character) => {
     return character.name
       .toLocaleLowerCase()
@@ -45,14 +45,18 @@ const App = () => {
 
   //Función que sincronica el value del input donde la usuaria teclea su búsqueda y la variable de estado search.
   const handleChangeSearch = (ev) => {
+    ev.preventDefault();
     setSearch(ev.currentTarget.value);
   };
 
   return (
     <>
+      <Header />
       <Switch>
-        <Route path='/' exact>
-          <Header />
+        <Route path='/character/:id'>
+          <CharacterDetail data={selectedCharacter} />
+        </Route>
+        <Route exact path='/'>
           <FilterCharacterByName
             search={search}
             handleChangeSearch={handleChangeSearch}
@@ -61,9 +65,7 @@ const App = () => {
             <CharacterList data={filteredData} />
           </section>
         </Route>
-        <Route path='/character/:id'>
-          <CharacterDetail data={selectedCharacter} />
-        </Route>
+
         <Route>La página que buscas no existe, sorry.</Route>
       </Switch>
     </>
