@@ -1,5 +1,5 @@
 //import Proptypes from 'prop-types';
-import { Route, Link, Switch } from 'react-router-dom';
+import { Route, Switch, useRouteMatch } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import Header from './Header';
 import '../styles/App.scss';
@@ -9,8 +9,8 @@ import '../styles/layout/list.scss';
 import callToApi from '../services/api';
 import FilterCharacterByName from './Filters';
 import CharacterList from './CharacterList';
+import CharacterDetail from './CharacterDetail';
 //import { Switch } from 'react-router-dom/cjs/react-router-dom.min';
-//import CharacterDetail from './CharacterDetail';
 
 const App = () => {
   //Variable estado para el array con los datos que devuelve el api.
@@ -22,9 +22,19 @@ const App = () => {
   useEffect(() => {
     callToApi(data).then((response) => {
       setData(response);
-      console.log(response);
+      console.log('response=', response);
     });
   }, []);
+
+  console.log('data= ', data);
+
+  const routeData = useRouteMatch('/character/:id');
+  const characterId = routeData !== null ? routeData.params.id : '';
+
+  const selectedCharacter = data.find(
+    (character) => character.id === parseInt(characterId)
+  );
+  console.log('selectedC=', selectedCharacter);
 
   //con el filter filtamos por nombre para se pueda buscar por el nomrbe de cada personaje. Con el map pintamos cada personaje en el HTML.
   const filteredData = data.filter((character) => {
@@ -41,15 +51,19 @@ const App = () => {
   return (
     <>
       <Switch>
-        <Route path='/'>
+        <Route path='/' exact>
           <Header />
           <FilterCharacterByName
             search={search}
             handleChangeSearch={handleChangeSearch}
           />
-          <CharacterList data={filteredData} />
+          <section>
+            <CharacterList data={filteredData} />
+          </section>
         </Route>
-        <Route path='/CharacterDetail/:id'>{/* <CharacterDetail /> */}</Route>
+        <Route path='/character/:id'>
+          <CharacterDetail data={selectedCharacter} />
+        </Route>
         <Route>La página que buscas no existe, sorry.</Route>
       </Switch>
     </>
