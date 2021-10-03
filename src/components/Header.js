@@ -3,11 +3,11 @@ import '../styles/layout/header.scss';
 
 const Header = () => {
   return (
-    <>
+    <header>
       <div className='container__img'>
         <img src={logo} alt='Logo Rick and Morty' />
       </div>
-    </>
+    </header>
   );
 };
 
