@@ -1,14 +1,12 @@
+@import '../core/variables.scss';
+
 .container{
-    //border: 1px solid white; //este borde se quita al final del diseño
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-evenly;
     align-items: center;
-    box-shadow:#97ce4c;
-    // :hover{
-    //     background-color: 	#53FF66;
-    // }
+    box-shadow:$neon-green;
     
     &__info {
     border: 1px solid white;   
@@ -26,7 +24,7 @@
         height: 300px;
     }
     &--name {
-        color: #97ce4c;
+        color: $neon-green;
         font-size: 22px;
         font-family: 'Shadows Into Light', cursive;
         text-transform: uppercase;
@@ -42,9 +40,8 @@
 }
 
 .container__info:hover{
-    box-shadow: 0 0 5px 5px #7cff30;
+    box-shadow: 0 0 5px 5px $neon-green-hover;
     cursor: pointer;
 }
 
-//#53FF66
 
