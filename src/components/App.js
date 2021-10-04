@@ -19,7 +19,7 @@ const App = () => {
 
   //Llamar al api con useEffect
   useEffect(() => {
-    callToApi(data).then((response) => {
+    callToApi().then((response) => {
       setData(response);
       console.log('response=', response);
     });
@@ -29,8 +29,10 @@ const App = () => {
 
   const routeData = useRouteMatch('/character/:id');
   console.log('routeData=', routeData);
+
   const characterId = routeData !== null ? routeData.params.id : '';
   console.log('character=', characterId);
+
   const selectedCharacter = data.find(
     (character) => character.id === parseInt(characterId)
   );
