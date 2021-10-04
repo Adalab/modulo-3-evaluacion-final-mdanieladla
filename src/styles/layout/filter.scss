@@ -3,7 +3,7 @@
 .container__form {
     display: flex;
     justify-content: center;
-    //justify-content: space-evenly;
+    justify-content: center;
     &--label{
         font-size: 25px;
         color: #fff;
@@ -11,23 +11,30 @@
         0 0 10px $neon-green,
         0 0 21px $neon-green,
         0 0 42px rgb(0, 255, 221);
-        margin-right: 20px;
-        
+        margin-right: 50px;
     }
     &--input{
+        color: $white;
         border-radius: 10px;
         background: transparent;
         border: 2px solid $neon-green;
         outline-width: 0;
-    }
-}
-
-.container__form--input:hover{
-    box-shadow: 0 0 5px 5px #35c9dd;
+        margin-right: 50px;
+        box-shadow: 0 0 5px 5px #35c9dd;
     background-color: rgba(151, 206, 76, 0.8);
+    }
+    &--select{
+        color: $white;
+        border-radius: 10px;
+        background: transparent;
+        border: 2px solid $neon-green;
+        outline-width: 0;
+        margin-right: 50px;
+        box-shadow: 0 0 5px 5px #35c9dd;
+    background-color: rgba(151, 206, 76, 0.8);
+    }
 }
 
 ::placeholder{
     color: $white;
-    
 }
