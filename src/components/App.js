@@ -9,7 +9,7 @@ import callToApi from '../services/api';
 import FilterCharacterByName from './Filters';
 import CharacterList from './CharacterList';
 import CharacterDetail from './CharacterDetail';
-//import { Switch } from 'react-router-dom/cjs/react-router-dom.min';
+import NotFoundPage from './NotFoundPage';
 
 const App = () => {
   //Variable estado para el array con los datos que devuelve el api.
@@ -21,22 +21,22 @@ const App = () => {
   useEffect(() => {
     callToApi().then((response) => {
       setData(response);
-      console.log('response=', response);
+      //console.log('response=', response);
     });
   }, []);
 
   console.log('data= ', data);
 
   const routeData = useRouteMatch('/character/:id');
-  console.log('routeData=', routeData);
+  //console.log('routeData=', routeData);
 
   const characterId = routeData !== null ? routeData.params.id : '';
-  console.log('character=', characterId);
+  //console.log('character=', characterId);
 
   const selectedCharacter = data.find(
     (character) => character.id === parseInt(characterId)
   );
-  console.log('selectedC=', selectedCharacter);
+  //console.log('selectedC=', selectedCharacter);
 
   //con el filter filtamos por nombre para se pueda buscar por el nombre de cada personaje. Con el map pintamos cada personaje en el HTML.
   const filteredData = data.filter((character) => {
@@ -44,7 +44,11 @@ const App = () => {
       .toLocaleLowerCase()
       .includes(search.toLocaleLowerCase());
   });
-
+  console.log('filteredData= ', filteredData);
+  // if (filteredData !== undefined) {
+  //   return <NotFoundPage />;
+  // }
+  console.log('s=', search);
   //Función que sincronica el value del input donde la usuaria teclea su búsqueda y la variable de estado search.
   const handleChangeSearch = (ev) => {
     ev.preventDefault();
@@ -68,7 +72,9 @@ const App = () => {
           </section>
         </Route>
 
-        <Route>La página que buscas no existe, sorry.</Route>
+        <Route>
+          <NotFoundPage />
+        </Route>
       </Switch>
     </>
   );
