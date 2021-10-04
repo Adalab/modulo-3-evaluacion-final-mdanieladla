@@ -1,0 +1,30 @@
+.container__form {
+    display: flex;
+    justify-content: center;
+    //justify-content: space-evenly;
+    &--label{
+        font-size: 25px;
+        color: #fff;
+        text-shadow: 0 0 7px #97ce4c,
+        0 0 10px #97ce4c,
+        0 0 21px #97ce4c,
+        0 0 42px rgb(0, 255, 221);
+        margin-right: 20px;
+    }
+    &--input{
+        border-radius: 10px;
+        background: transparent;
+        border: 2px solid #97ce4c;
+        outline-width: 0;
+    }
+}
+
+.container__form--input:hover{
+    box-shadow: 0 0 5px 5px #35c9dd;
+    background-color: rgba(151, 206, 76, 0.8);
+}
+
+::placeholder{
+    color: white;
+    
+}
