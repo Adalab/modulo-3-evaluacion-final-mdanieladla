@@ -1,3 +1,5 @@
+@import '../core/variables.scss';
+
 .container__form {
     display: flex;
     justify-content: center;
@@ -5,16 +7,17 @@
     &--label{
         font-size: 25px;
         color: #fff;
-        text-shadow: 0 0 7px #97ce4c,
-        0 0 10px #97ce4c,
-        0 0 21px #97ce4c,
+        text-shadow: 0 0 7px $neon-green,
+        0 0 10px $neon-green,
+        0 0 21px $neon-green,
         0 0 42px rgb(0, 255, 221);
         margin-right: 20px;
+        
     }
     &--input{
         border-radius: 10px;
         background: transparent;
-        border: 2px solid #97ce4c;
+        border: 2px solid $neon-green;
         outline-width: 0;
     }
 }
@@ -25,6 +28,6 @@
 }
 
 ::placeholder{
-    color: white;
+    color: $white;
     
 }
