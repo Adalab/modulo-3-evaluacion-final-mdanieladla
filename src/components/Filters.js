@@ -13,6 +13,18 @@ const FilterCharacterByName = (props) => {
         value={props.search}
         onChange={props.handleChangeSearch}
       />
+      <label className='container__form--label'>Especie</label>
+      <select
+        className='container__form--select'
+        name='species'
+        id='species'
+        value={props.species}
+        onChange={props.handleChangeSpecie}
+      >
+        <option value='all'>Todos</option>
+        <option value='Alien'>Aliens</option>
+        <option value='Human'>Humanos</option>
+      </select>
     </form>
   );
 };
