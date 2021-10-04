@@ -1,3 +1,31 @@
-.no-page{
-    color: white;
+@import '../core/variables.scss';
+
+.no-page{    
+    &--par {
+        color: $neon-green;
+        font-size: 30px;
+        text-align: center;
+        margin-top: 90px;
+        text-shadow: 0 0 7px $neon-green,
+        0 0 10px $neon-green,
+        0 0 21px $neon-green,
+        0 0 42px rgb(0, 255, 221);
+        }
+        &--par2{
+            color: $neon-green;
+            font-size: 30px;
+            text-align: center;
+            text-shadow: 0 0 7px $neon-green,
+            0 0 10px $neon-green,
+            0 0 21px $neon-green,
+            0 0 42px rgb(0, 255, 221);
+        }
+}
+.page{
+    display: flex;
+    justify-content: space-between;
+}
+.portal-img2{
+    width: 325px;
+    height: 325px;
 }
