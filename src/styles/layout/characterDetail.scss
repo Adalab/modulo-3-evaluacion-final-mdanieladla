@@ -1,0 +1,33 @@
+body {
+    background: url('../../images/wallpaper.png') no-repeat center center fixed;
+}
+
+.container-detail{
+    display: flex;
+    justify-content: center;
+}
+
+.containerDetail{
+display: flex;
+flex-direction: row;
+align-items: center;
+justify-content: space-around;
+background-color: rgba(255, 255, 255, 0.219);
+width: 60%;
+     &--name{
+        color: white;
+    }
+    &--status{
+        color: white;
+    }
+    &--species{
+        color: white;
+    }
+    &--origin{
+        color: white;
+    }
+    &--episodes{
+        color: white;
+    }
+       
+   }
