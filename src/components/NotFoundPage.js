@@ -14,7 +14,9 @@ const NotFouondPage = () => {
           title='Volver a incio'
         />
       </Link>
-      <p className='no-page--par2'>La galaxia que buscas no existe, sorry.</p>
+      <p className='no-page--par2'>
+        Wubba Lubba Dub Dub!! <br /> Vuelve por el portal
+      </p>
     </div>
   );
 };
