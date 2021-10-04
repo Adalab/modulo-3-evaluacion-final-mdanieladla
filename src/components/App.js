@@ -7,6 +7,7 @@ import FilterCharacterByName from './Filters';
 import CharacterList from './CharacterList';
 import CharacterDetail from './CharacterDetail';
 import NotFoundPage from './NotFoundPage';
+import Footer from './Footer';
 //Servicios
 import callToApi from '../services/api';
 //Estilos
@@ -83,11 +84,11 @@ const App = () => {
             <CharacterList data={filteredData} />
           </section>
         </Route>
-
         <Route>
           <NotFoundPage />
         </Route>
       </Switch>
+      <Footer />
     </>
   );
 };
