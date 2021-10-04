@@ -1,15 +1,17 @@
 //import Proptypes from 'prop-types';
 import { Route, Switch, useRouteMatch } from 'react-router-dom';
 import { useState, useEffect } from 'react';
+//Componentes
 import Header from './Header';
-import '../styles/App.scss';
-import '../styles/layout/list.scss';
-
-import callToApi from '../services/api';
 import FilterCharacterByName from './Filters';
 import CharacterList from './CharacterList';
 import CharacterDetail from './CharacterDetail';
 import NotFoundPage from './NotFoundPage';
+//Servicios
+import callToApi from '../services/api';
+//Estilos
+import '../styles/App.scss';
+import '../styles/layout/list.scss';
 
 const App = () => {
   //Variable estado para el array con los datos que devuelve el api.
@@ -25,7 +27,7 @@ const App = () => {
     });
   }, []);
 
-  console.log('data= ', data);
+  //console.log('data= ', data);
 
   const routeData = useRouteMatch('/character/:id');
   //console.log('routeData=', routeData);
@@ -44,11 +46,8 @@ const App = () => {
       .toLocaleLowerCase()
       .includes(search.toLocaleLowerCase());
   });
-  console.log('filteredData= ', filteredData);
-  // if (filteredData !== undefined) {
-  //   return <NotFoundPage />;
-  // }
-  console.log('s=', search);
+  //console.log('filteredData= ', filteredData);
+
   //Función que sincronica el value del input donde la usuaria teclea su búsqueda y la variable de estado search.
   const handleChangeSearch = (ev) => {
     ev.preventDefault();
