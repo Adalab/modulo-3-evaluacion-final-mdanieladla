@@ -28,4 +28,15 @@
 .portal-img2{
     width: 325px;
     height: 325px;
+   animation: rotation 5s  ; //infinte?
+    animation-timing-function: linear;
+}
+
+@keyframes rotation {
+    from {
+        -webkit-transform: rotate(0deg);
+}
+to {
+        -webkit-transform: rotate(359deg);
+}
 }
