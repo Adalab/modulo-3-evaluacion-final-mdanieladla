@@ -20,8 +20,9 @@
     padding: 10px;
     transition: box-shadow .3s;
     &--img{
-        width: 300px;
-        height: 300px;
+        width: 290px;
+        height: 290px;
+        border-radius: 20px;
     }
     &--name {
         color: $neon-green;
