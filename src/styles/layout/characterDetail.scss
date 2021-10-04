@@ -1,5 +1,12 @@
+@import '../core/variables';
+
 body {
     background: url('../../images/wallpaper.png') no-repeat center center fixed;
+}
+
+.portal-img{
+    width: 40px;
+    height: 40px;
 }
 
 .container-detail{
@@ -13,21 +20,40 @@ flex-direction: row;
 align-items: center;
 justify-content: space-around;
 background-color: rgba(255, 255, 255, 0.219);
+padding: 10px;
 width: 60%;
-     &--name{
-        color: white;
+     &--nameDetail{
+        font-family: $font-family;
+        text-transform: uppercase;
+        color: $white;
     }
     &--status{
-        color: white;
+        font-weight: bold;
+        font-size: 20px;
+        color: $white;
+        font-family: $font-family;
+        text-transform: uppercase;
     }
     &--species{
-        color: white;
+        font-weight: bold;
+        font-size: 20px;
+        color: $white;
+        font-family: $font-family;
+        text-transform: uppercase;
     }
     &--origin{
-        color: white;
+        font-weight: bold;
+        font-size: 20px;
+        color: $white;
+        font-family: $font-family;
+        text-transform: uppercase;
     }
     &--episodes{
-        color: white;
+        font-weight: bold;
+        font-size: 20px;
+        color: $white;
+        font-family: $font-family;
+        text-transform: uppercase;
     }
        
    }
