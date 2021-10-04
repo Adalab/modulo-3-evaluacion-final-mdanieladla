@@ -1,9 +1,5 @@
 @import '../core/variables';
 
-body {
-    background: url('../../images/wallpaper.png') no-repeat center center fixed;
-}
-
 .portal-img{
     width: 40px;
     height: 40px;
@@ -55,5 +51,4 @@ width: 60%;
         font-family: $font-family;
         text-transform: uppercase;
     }
-       
    }
