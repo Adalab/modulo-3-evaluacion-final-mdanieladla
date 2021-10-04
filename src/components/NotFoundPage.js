@@ -1,5 +1,7 @@
 import { Link } from 'react-router-dom';
+//Estilos
 import '../styles/layout/notFoundPage.scss';
+//Imágenes
 import portal from '../images/rick-and-morty-portal.png';
 const NotFouondPage = () => {
   return (
