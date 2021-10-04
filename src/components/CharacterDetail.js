@@ -3,6 +3,7 @@ import alien from '../images/alien.png';
 import person from '../images/person.png';
 import dead from '../images/dead.png';
 import alive from '../images/alive.png';
+import portal from '../images/portal.png';
 import '../styles/layout/characterDetail.scss';
 import NotFoundPage from './NotFoundPage';
 const CharacterDetail = (props) => {
@@ -11,27 +12,34 @@ const CharacterDetail = (props) => {
     return (
       <>
         <Link to='/'>
-          <p>Volver atrás</p>
+          <img
+            src={portal}
+            alt='Volver atrás'
+            title='Volver atrás'
+            className='portal-img'
+          />
         </Link>
         <ul className='container-detail'>
           <li className='containerDetail'>
             <img src={props.data.image} alt={`Img of ${props.data.name}`} />
             <div>
-              <h3 className='containerDetail--name'>Name: {props.data.name}</h3>
+              <h3 className='containerDetail--nameDetail'>
+                Name: {props.data.name}
+              </h3>
               <p className='containerDetail--status'>
                 Status:{' '}
                 {props.data.status === 'Alive' ? (
-                  <img src={alive} width='60' height='60' alt='a' />
+                  <img src={alive} width='70' height='70' alt='Alive icon' />
                 ) : (
-                  <img src={dead} width='60' height='60' alt='a' />
+                  <img src={dead} width='70' height='70' alt='Dead icon' />
                 )}
               </p>
               <p className='containerDetail--species'>
                 Species:{' '}
                 {props.data.species === 'Human' ? (
-                  <img src={person} width='60' height='60' alt='a' />
+                  <img src={person} width='70' height='70' alt='Person icon' />
                 ) : (
-                  <img src={alien} width='60' height='60' alt='a' />
+                  <img src={alien} width='70' height='70' alt='Alien icon' />
                 )}
               </p>
               <p className='containerDetail--origin'>
