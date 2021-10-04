@@ -1,17 +1,21 @@
 import { Link } from 'react-router-dom';
+//Imágenes
 import alien from '../images/alien.png';
 import person from '../images/person.png';
 import dead from '../images/dead.png';
 import alive from '../images/alive.png';
 import portal from '../images/portal.png';
+//Estilos
 import '../styles/layout/characterDetail.scss';
+//Componentes
 import NotFoundPage from './NotFoundPage';
+
 const CharacterDetail = (props) => {
-  console.log('CharacterDetail props=', props);
+  //console.log('CharacterDetail props=', props);
   if (props.data !== undefined) {
     return (
       <>
-        <Link to='/'>
+        <Link to='/' className='link'>
           <img
             src={portal}
             alt='Volver atrás'
