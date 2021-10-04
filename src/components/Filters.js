@@ -1,4 +1,5 @@
 import '../styles/layout/filter.scss';
+// import PropTypes from 'prop-types';
 
 const FilterCharacterByName = (props) => {
   return (
@@ -8,7 +9,6 @@ const FilterCharacterByName = (props) => {
       </label>
       <input
         className='container__form--input'
-        type='text'
         placeholder='Morty'
         value={props.search}
         onChange={props.handleChangeSearch}
@@ -28,5 +28,13 @@ const FilterCharacterByName = (props) => {
     </form>
   );
 };
+
+FilterCharacterByName.defaultProps = {
+  inputType: 'text',
+};
+
+// FilterCharacterByName.PropTypes = {
+
+// }
 
 export default FilterCharacterByName;
