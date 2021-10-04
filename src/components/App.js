@@ -18,6 +18,12 @@ const App = () => {
   const [data, setData] = useState([]);
   //Variable de estado para guardar el value del input.
   const [search, setSearch] = useState('');
+  //Variable para escoger la especie
+  const [species, setSpecies] = useState('all');
+
+  //Ordenar alfabéticamente
+  const orderedData = data.sort((a, b) => a.name.localeCompare(b.name));
+  console.log('sort=', orderedData);
 
   //Llamar al api con useEffect
   useEffect(() => {
@@ -40,18 +46,24 @@ const App = () => {
   );
   //console.log('selectedC=', selectedCharacter);
 
-  //con el filter filtamos por nombre para se pueda buscar por el nombre de cada personaje. Con el map pintamos cada personaje en el HTML.
-  const filteredData = data.filter((character) => {
-    return character.name
-      .toLocaleLowerCase()
-      .includes(search.toLocaleLowerCase());
-  });
-  //console.log('filteredData= ', filteredData);
+  //con el filter filtamos por nombre para se pueda buscar por el nombre de cada personaje; y en el select que se pueda seleccionar por especie. Con el map pintamos cada personaje en el HTML.
+  const filteredData = data
+    .filter((character) => {
+      return character.name
+        .toLocaleLowerCase()
+        .includes(search.toLocaleLowerCase());
+    })
+    .filter((character) => species === 'all' || species === character.species);
 
   //Función que sincronica el value del input donde la usuaria teclea su búsqueda y la variable de estado search.
   const handleChangeSearch = (ev) => {
     ev.preventDefault();
     setSearch(ev.currentTarget.value);
+  };
+
+  //Función para filtrar por especies
+  const handleChangeSpecie = (ev) => {
+    setSpecies(ev.currentTarget.value);
   };
 
   return (
@@ -65,6 +77,7 @@ const App = () => {
           <FilterCharacterByName
             search={search}
             handleChangeSearch={handleChangeSearch}
+            handleChangeSpecie={handleChangeSpecie}
           />
           <section>
             <CharacterList data={filteredData} />
