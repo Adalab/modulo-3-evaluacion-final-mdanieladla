@@ -1,11 +1,13 @@
 @import '../core/variables.scss';
 
 .container{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    align-items: center;
+    // display: flex;
+    // flex-direction: row;
+    // flex-wrap: wrap;
+    // justify-content: space-evenly;
+    // align-items: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     box-shadow:$neon-green;
     
     &__info {
@@ -20,8 +22,8 @@
     padding: 10px;
     transition: box-shadow .3s;
     &--img{
-        width: 290px;
-        height: 290px;
+        width: 250px;
+        height: 250px;
         border-radius: 20px;
     }
     &--name {
