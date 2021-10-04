@@ -4,6 +4,7 @@ import person from '../images/person.png';
 import dead from '../images/dead.png';
 import alive from '../images/alive.png';
 import '../styles/layout/characterDetail.scss';
+import NotFoundPage from './NotFoundPage';
 const CharacterDetail = (props) => {
   console.log('CharacterDetail props=', props);
   if (props.data !== undefined) {
@@ -39,17 +40,13 @@ const CharacterDetail = (props) => {
               <p className='containerDetail--episodes'>
                 Episodes: {props.data.episode}
               </p>
-              {/* <img src={alien} width='100' height='100' alt='a' />
-              <img src={person} width='100' height='100' alt='a' /> */}
-              {/* <img src={dead} width='100' height='100' alt='a' />
-              <img src={alive} width='100' height='100' alt='a' /> */}
             </div>
           </li>
         </ul>
       </>
     );
   } else {
-    return <p>Pagina no encontrada</p>;
+    return <NotFoundPage />;
   }
 };
 
