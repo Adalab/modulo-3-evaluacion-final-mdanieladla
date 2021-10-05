@@ -1,0 +1,29 @@
+{
+  "files": {
+    "main.css": "./static/css/main.2232cd0c.chunk.css",
+    "main.js": "./static/js/main.f911389f.chunk.js",
+    "main.js.map": "./static/js/main.f911389f.chunk.js.map",
+    "runtime-main.js": "./static/js/runtime-main.7ad783a2.js",
+    "runtime-main.js.map": "./static/js/runtime-main.7ad783a2.js.map",
+    "static/js/2.3089a886.chunk.js": "./static/js/2.3089a886.chunk.js",
+    "static/js/2.3089a886.chunk.js.map": "./static/js/2.3089a886.chunk.js.map",
+    "index.html": "./index.html",
+    "static/css/main.2232cd0c.chunk.css.map": "./static/css/main.2232cd0c.chunk.css.map",
+    "static/js/2.3089a886.chunk.js.LICENSE.txt": "./static/js/2.3089a886.chunk.js.LICENSE.txt",
+    "static/media/Rick_and_Morty_-_logo.de13d484.png": "./static/media/Rick_and_Morty_-_logo.de13d484.png",
+    "static/media/alien.ee2f8d48.png": "./static/media/alien.ee2f8d48.png",
+    "static/media/alive.9a953373.png": "./static/media/alive.9a953373.png",
+    "static/media/dead.34360336.png": "./static/media/dead.34360336.png",
+    "static/media/person.cb3354c4.png": "./static/media/person.cb3354c4.png",
+    "static/media/portal.f7a707b1.png": "./static/media/portal.f7a707b1.png",
+    "static/media/rick-and-morty-portal.a218ca22.png": "./static/media/rick-and-morty-portal.a218ca22.png",
+    "static/media/rick.80dc1a7d.png": "./static/media/rick.80dc1a7d.png",
+    "static/media/App.scss": "./static/media/wallpaper.181c2483.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.7ad783a2.js",
+    "static/js/2.3089a886.chunk.js",
+    "static/css/main.2232cd0c.chunk.css",
+    "static/js/main.f911389f.chunk.js"
+  ]
+}
