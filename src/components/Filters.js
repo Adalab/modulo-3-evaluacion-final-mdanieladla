@@ -2,8 +2,11 @@ import '../styles/layout/filter.scss';
 import PropTypes from 'prop-types';
 
 const FilterCharacterByName = (props) => {
+  const handleSubmit = (ev) => {
+    ev.preventDefault();
+  };
   return (
-    <form className='container__form'>
+    <form className='container__form' onSubmit={handleSubmit}>
       <label className='container__form--label'>
         Busca por el nombre del personaje
       </label>
