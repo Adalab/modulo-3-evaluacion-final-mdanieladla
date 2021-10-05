@@ -1,5 +1,5 @@
 import '../styles/layout/filter.scss';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 
 const FilterCharacterByName = (props) => {
   return (
@@ -36,7 +36,7 @@ const FilterCharacterByName = (props) => {
         <option value='all'>Todos</option>
         <option value='Alive'>Vivos</option>
         <option value='Dead'>Muertos</option>
-        <option value='unknown'>Desconocidos</option>
+        <option value='unknown'>Desconocido</option>
       </select>
     </form>
   );
@@ -46,8 +46,8 @@ FilterCharacterByName.defaultProps = {
   inputType: 'text',
 };
 
-// FilterCharacterByName.PropTypes = {
-
-// }
+FilterCharacterByName.propTypes = {
+  handleChange: PropTypes.func.isRequired,
+};
 
 export default FilterCharacterByName;
