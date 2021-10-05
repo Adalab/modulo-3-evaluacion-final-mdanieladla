@@ -15,7 +15,7 @@ const CharacterDetail = (props) => {
   //console.log('CharacterDetail props=', props);
   const status = () => {
     if (props.data.status === 'unknown') {
-      return <img src={unknown} width='110' height='110' alt='Unknown icon' />;
+      return <img src={unknown} width='120' height='70' alt='Unknown icon' />;
     } else if (props.data.status === 'Dead') {
       return <img src={dead} width='70' height='70' alt='Dead icon' />;
     } else {
