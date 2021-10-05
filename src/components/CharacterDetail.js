@@ -12,7 +12,6 @@ import '../styles/layout/characterDetail.scss';
 import NotFoundPage from './NotFoundPage';
 
 const CharacterDetail = (props) => {
-  //console.log('CharacterDetail props=', props);
   const status = () => {
     if (props.data.status === 'unknown') {
       return <img src={unknown} width='120' height='70' alt='Unknown icon' />;

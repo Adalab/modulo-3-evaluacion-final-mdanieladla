@@ -4,7 +4,6 @@ import CharacterCard from './CharacterCard';
 import NotACharacter from './NotACharacter';
 
 const CharacterList = (props) => {
-  //console.log('characterlist=', props.data);
   if (props.data.length === 0) {
     return <NotACharacter />;
   } else {

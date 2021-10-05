@@ -21,6 +21,8 @@ const App = () => {
   const [search, setSearch] = useState('');
   //Variable para escoger la especie
   const [species, setSpecies] = useState('all');
+  //Variable para escoger por estado
+  const [status, setStatus] = useState('all');
 
   //Ordenar alfabéticamente
   const orderedData = data.sort((a, b) => a.name.localeCompare(b.name));
@@ -30,31 +32,26 @@ const App = () => {
   useEffect(() => {
     callToApi().then((response) => {
       setData(response);
-      //console.log('response=', response);
     });
   }, []);
 
-  //console.log('data= ', data);
-
   const routeData = useRouteMatch('/character/:id');
-  //console.log('routeData=', routeData);
 
   const characterId = routeData !== null ? routeData.params.id : '';
-  //console.log('character=', characterId);
 
   const selectedCharacter = data.find(
     (character) => character.id === parseInt(characterId)
   );
-  //console.log('selectedC=', selectedCharacter);
 
-  //con el filter filtamos por nombre para se pueda buscar por el nombre de cada personaje; y en el select que se pueda seleccionar por especie. Con el map pintamos cada personaje en el HTML.
+  //con el filter filtamos por nombre para se pueda buscar por el nombre de cada personaje; y en el select que se pueda seleccionar por especie/estado. Con el map pintamos cada personaje en el HTML.
   const filteredData = data
     .filter((character) => {
       return character.name
         .toLocaleLowerCase()
         .includes(search.toLocaleLowerCase());
     })
-    .filter((character) => species === 'all' || species === character.species);
+    .filter((character) => species === 'all' || species === character.species)
+    .filter((character) => status === 'all' || status === character.status);
 
   //Función que sincronica el value del input donde la usuaria teclea su búsqueda y la variable de estado search.
   const handleChangeSearch = (ev) => {
@@ -65,6 +62,11 @@ const App = () => {
   //Función para filtrar por especies
   const handleChangeSpecie = (ev) => {
     setSpecies(ev.currentTarget.value);
+  };
+
+  //Función para filtrar por estado
+  const handleChangeStatus = (ev) => {
+    setStatus(ev.currentTarget.value);
   };
 
   return (
@@ -79,8 +81,9 @@ const App = () => {
             search={search}
             handleChangeSearch={handleChangeSearch}
             handleChangeSpecie={handleChangeSpecie}
+            handleChangeStatus={handleChangeStatus}
           />
-          <section>
+          <section className='section__container'>
             <CharacterList data={filteredData} />
           </section>
         </Route>
