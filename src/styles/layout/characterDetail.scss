@@ -7,48 +7,86 @@
 
 .container-detail{
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    @media all and (min-width: 768px) {
+        flex-direction: row;
+    }
 }
 
 .containerDetail{
 display: flex;
-flex-direction: row-reverse;
+flex-direction: column;
 align-items: center;
-justify-content: space-around;
-background-color: rgba(255, 255, 255, 0.219);
-padding: 10px;
-width: 60%;
+background-color: rgba(255, 255, 255, 0.404);
+@media all and (min-width: 768px) {
+    flex-direction: row-reverse;
+    justify-content: space-around;
+    background-color: rgba(255, 255, 255, 0.219);
+    padding: 10px;
+    width: 60%;
+}
+&--img{
+    padding-top: 10px;
+    width: 200px;
+    height: 200px;
+    @media all and (min-width: 768px) {
+        padding-top: 0;
+        width: 250px;
+        height: 250px;
+    }
+    @media all and (min-width:1024px) {
+        width: 300px;
+        height: 300px;
+    }
+}
      &--nameDetail{
-        font-family: $font-family;
+         font-family: $font-family;
         text-transform: uppercase;
-        color: $white;
+        color: $neon-green;
+         @media all and (min-width:768px) {
+        color: $white; 
+         }
+       
     }
     &--status{
+        color: $neon-green;
         font-weight: bold;
         font-size: 20px;
-        color: $white;
         font-family: $font-family;
         text-transform: uppercase;
+        @media all and (min-width:768px) {
+            color: $white; 
+             }
     }
     &--species{
+        color: $neon-green;
         font-weight: bold;
         font-size: 20px;
-        color: $white;
         font-family: $font-family;
         text-transform: uppercase;
+        @media all and (min-width:768px) {
+            color: $white; 
+             }
     }
     &--origin{
+        color: $neon-green;
         font-weight: bold;
         font-size: 20px;
-        color: $white;
         font-family: $font-family;
         text-transform: uppercase;
+        @media all and (min-width:768px) {
+            color: $white; 
+             }
     }
     &--episodes{
+        color: $neon-green;
         font-weight: bold;
         font-size: 20px;
-        color: $white;
         font-family: $font-family;
         text-transform: uppercase;
+        @media all and (min-width:768px) {
+            color: $white; 
+             }
     }
    }
