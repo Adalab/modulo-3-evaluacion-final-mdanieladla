@@ -13,23 +13,42 @@
         }
         &--par2{
             color: $neon-green;
-            font-size: 30px;
+            font-size: 14px;
             text-align: center;
             text-shadow: 0 0 7px $neon-green,
             0 0 10px $neon-green,
             0 0 21px $neon-green,
             0 0 42px rgb(0, 255, 221);
+            @media all and (min-width:768px) {
+                font-size: 18px;
+            }
+            @media all and (min-width:1024px) {
+                font-size: 30px;
+            }
         }
 }
 .page{
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+
+    @media all and (min-width:1024px) {
+        flex-direction: row;
+        justify-content: space-between;
+    }
 }
 .portal-img2{
-    width: 325px;
-    height: 325px;
+    width: 250px;
+    height: 250px;
    animation: rotation 5s  ; //infinte?
     animation-timing-function: linear;
+    @media all and (min-width:768px) {
+        width: 300px;
+        height: 300px;
+    }
+    @media all and (min-width: 1024px) {
+        width: 325px;
+        height: 325px;
+    }
 }
 
 @keyframes rotation {
