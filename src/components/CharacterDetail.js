@@ -36,7 +36,11 @@ const CharacterDetail = (props) => {
         </Link>
         <ul className='container-detail'>
           <li className='containerDetail'>
-            <img src={props.data.image} alt={`Img of ${props.data.name}`} />
+            <img
+              src={props.data.image}
+              alt={`Img of ${props.data.name}`}
+              className='containerDetail--img'
+            />
             <div>
               <h3 className='containerDetail--nameDetail'>
                 Name: {props.data.name}
