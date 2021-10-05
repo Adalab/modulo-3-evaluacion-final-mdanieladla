@@ -4,8 +4,12 @@ import '../styles/layout/header.scss';
 const Header = () => {
   return (
     <header>
-      <div className='container__img'>
-        <img src={logo} alt='Logo Rick and Morty' />
+      <div className='container__header'>
+        <img
+          src={logo}
+          alt='Logo Rick and Morty'
+          className='container__header--img'
+        />
       </div>
     </header>
   );
