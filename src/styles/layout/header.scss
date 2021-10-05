@@ -1,6 +1,14 @@
-.container__img {
+.container__header {
     display: flex;
     flex-direction: row;
     justify-content: center;
+    &--img {
+        width: 200px;
+        height: 100px;
+        @media all and (min-width: 768px) {
+            width: 500px;
+            height: 200px;  
+        }
+    }
 }
 
