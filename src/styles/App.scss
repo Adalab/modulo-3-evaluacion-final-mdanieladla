@@ -1,13 +1,12 @@
 body {
-    background: url('../images/wallpaper.png') no-repeat center center fixed;
+    background: url('../images/wallpaper.png');
+    background-position: center center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
     background-size: cover;
     @media all and (min-width: 768px) {
     background: url('../images/wallpaper.png') no-repeat center center fixed;
-    //background-size: contain;
     }
-   @media all and (min-width: 1024px) {
-    background: url('../images/wallpaper.png') no-repeat center center fixed;
-   }
 }
 
 .link {
