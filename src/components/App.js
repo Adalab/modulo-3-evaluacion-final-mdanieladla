@@ -23,10 +23,11 @@ const App = () => {
   const [species, setSpecies] = useState('all');
   //Variable para escoger por estado
   const [status, setStatus] = useState('all');
+  const [location, setLocation] = useState('');
 
   //Ordenar alfabéticamente
   const orderedData = data.sort((a, b) => a.name.localeCompare(b.name));
-  console.log('sort=', orderedData);
+  //console.log('sort=', orderedData);
 
   //Llamar al api con useEffect
   useEffect(() => {
@@ -50,6 +51,11 @@ const App = () => {
         .toLocaleLowerCase()
         .includes(search.toLocaleLowerCase());
     })
+    .filter((character) => {
+      return character.location
+        .toLocaleLowerCase()
+        .includes(location.toLocaleLowerCase());
+    })
     .filter((character) => species === 'all' || species === character.species)
     .filter((character) => status === 'all' || status === character.status);
 
@@ -69,6 +75,10 @@ const App = () => {
     setStatus(ev.currentTarget.value);
   };
 
+  const handleChangeLocation = (ev) => {
+    setLocation(ev.currentTarget.value);
+  };
+
   return (
     <>
       <Header />
@@ -82,6 +92,7 @@ const App = () => {
             handleChangeSearch={handleChangeSearch}
             handleChangeSpecie={handleChangeSpecie}
             handleChangeStatus={handleChangeStatus}
+            handleChangeLocation={handleChangeLocation}
           />
           <section className='section__container'>
             <CharacterList data={filteredData} />

@@ -13,6 +13,7 @@ const callToApi = () => {
           image: character.image,
           origin: character.origin.name,
           episode: character.episode.length,
+          location: character.location.name,
         };
       });
     });

@@ -16,6 +16,13 @@ const FilterCharacterByName = (props) => {
         value={props.search}
         onChange={props.handleChangeSearch}
       />
+      <label className='container__form--label'>Busca por localización</label>
+      <input
+        className='container__form--input'
+        placeholder='Earth'
+        value={props.location}
+        onChange={props.handleChangeLocation}
+      />
       <label className='container__form--label'>Especie</label>
       <select
         className='container__form--select'
