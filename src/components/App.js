@@ -3,7 +3,7 @@ import { Route, Switch, useRouteMatch } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 //Componentes
 import Header from './Header';
-import FilterCharacterByName from './Filters';
+import Filters from './Filters';
 import CharacterList from './CharacterList';
 import CharacterDetail from './CharacterDetail';
 import NotFoundPage from './NotFoundPage';
@@ -26,7 +26,6 @@ const App = () => {
 
   //Ordenar alfabéticamente
   const orderedData = data.sort((a, b) => a.name.localeCompare(b.name));
-  console.log('sort=', orderedData);
 
   //Llamar al api con useEffect
   useEffect(() => {
@@ -77,10 +76,12 @@ const App = () => {
           <CharacterDetail data={selectedCharacter} />
         </Route>
         <Route exact path='/'>
-          <FilterCharacterByName
+          <Filters
             search={search}
             handleChangeSearch={handleChangeSearch}
+            valueSpecies={species}
             handleChangeSpecie={handleChangeSpecie}
+            valueStatus={status}
             handleChangeStatus={handleChangeStatus}
           />
           <section className='section__container'>

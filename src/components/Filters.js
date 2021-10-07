@@ -1,7 +1,7 @@
 import '../styles/layout/filter.scss';
 import PropTypes from 'prop-types';
 
-const FilterCharacterByName = (props) => {
+const Filters = (props) => {
   const handleSubmit = (ev) => {
     ev.preventDefault();
   };
@@ -21,7 +21,7 @@ const FilterCharacterByName = (props) => {
         className='container__form--select'
         name='species'
         id='species'
-        value={props.species}
+        value={props.valueSpecies}
         onChange={props.handleChangeSpecie}
       >
         <option value='all'>Todos</option>
@@ -33,7 +33,7 @@ const FilterCharacterByName = (props) => {
         className='container__form--select'
         name='status'
         id='status'
-        value={props.status}
+        value={props.valueStatus}
         onChange={props.handleChangeStatus}
       >
         <option value='all'>Todos</option>
@@ -45,12 +45,12 @@ const FilterCharacterByName = (props) => {
   );
 };
 
-FilterCharacterByName.defaultProps = {
+Filters.defaultProps = {
   inputType: 'text',
 };
 
-FilterCharacterByName.propTypes = {
+Filters.propTypes = {
   handleChange: PropTypes.func.isRequired,
 };
 
-export default FilterCharacterByName;
+export default Filters;

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import '../styles/layout/notFoundPage.scss';
 //Imágenes
 import portal from '../images/rick-and-morty-portal.png';
-const NotFouondPage = () => {
+const NotFoundPage = () => {
   return (
     <div className='page'>
       <Link to='/' className='link'>
@@ -21,4 +21,4 @@ const NotFouondPage = () => {
   );
 };
 
-export default NotFouondPage;
+export default NotFoundPage;
