@@ -12,7 +12,7 @@ const Filters = (props) => {
       </label>
       <input
         className='container__form--input'
-        placeholder='Morty'
+        placeholder='Ej: Morty'
         value={props.search}
         onChange={props.handleChangeSearch}
       />
