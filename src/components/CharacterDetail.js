@@ -25,13 +25,14 @@ const CharacterDetail = (props) => {
   if (props.data !== undefined) {
     return (
       <>
-        <Link to='/' className='link'>
+        <Link to='/' className='link containerPortal'>
           <img
             src={portal}
             alt='Volver atrás'
             title='Volver atrás'
             className='portal-img'
           />
+          <span className='back'>BACK</span>
         </Link>
         <ul className='container-detail'>
           <li className='containerDetail'>
