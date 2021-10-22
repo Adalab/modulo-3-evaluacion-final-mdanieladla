@@ -7,9 +7,7 @@ const Filters = (props) => {
   };
   return (
     <form className='container__form' onSubmit={handleSubmit}>
-      <label className='container__form--label'>
-        Busca por el nombre del personaje
-      </label>
+      <label className='container__form--label'>Busca por nombre</label>
       <input
         className='container__form--input'
         placeholder='Ej: Morty'
